@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/2ec4b6d9c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
+    <title>Catálogo Funkopop</title>
+  </head>
+
+  <body>
+    <header>
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
+        <section class="container">
+          <div class="container-fluid d-flex align-items-center">
+            <a class="navbar-brand" href="#">Funkopop</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="admin.html">Admin</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="row">
+        <div class="col-10">
+          <h1 class="display-3">Administrar productos</h1>
+        </div>
+        <div class="col-2">
+          <img src="img/batmanAdmin.jpg" alt="" class="w-100" />
+        </div>
+      </section>
+      <section>
+        <hr />
+        <div class="d-flex my-5">
+          <h3>Tabla de productos</h3>
+          <button class="btn btn-outline-primary ms-auto" id="btnAgregar">
+            Agregar
+          </button>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Número de serie</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaFunkopop">
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <!-- modal Funkopop -->
+    <div
+      class="modal fade"
+      id="modalFunkopop"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Agregar Funkopop</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formFunkopop" onsubmit="guardarFunko(event)">
+              <div class="mb-3">
+                <label class="form-label">Codigo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="codigo"
+                  placeholder="Ingrese un codigo"
+                />
+                <div class="invalid-feedback">
+                  Debe ingresar un codigo valido
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  placeholder="Ingrese un nombre"
+                />
+                <div class="invalid-feedback">
+                  Debe ingresar un nombre valido
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Numero de serie</label>
+                <input type="number" class="form-control" id="numSerie"
+                placeholder="Ingrese un codigo" ">
+                <div class="invalid-feedback">Debe ingresar un numero de serie correcto</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Categoria</label>
+                <input
+                  type="text "
+                  class="form-control"
+                  id="categoria"
+                  placeholder="Ingrese un codigo"
+                />
+                <div class="invalid-feedback">
+                  Debe ingresar una categoria valida
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Descripcion</label>
+                <textarea
+                  type="text"
+                  class="form-control"
+                  name=" "
+                  id="descripcion"
+                ></textarea>
+                <div class="invalid-feedback">
+                  Debe ingresar una descripcion valida
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Imagen</label>
+                <input type="text " class="form-control" id="imagen" />
+                <div class="invalid-feedback">
+                  Debe ingresar una imagen valida
+                </div>
+              </div>
+              <button class="btn btn-primary" type="submit">Guardar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark py-3 text-light text-center mt-5">
+      Todos los derechos reservados
+    </footer>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script type="module" src="/js/admin.js"></script>
+  </body>
+</html>
